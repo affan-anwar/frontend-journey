@@ -1,0 +1,31 @@
+/* Specificity Hierarchy (Highest to Lowest)
+   Inline styles (inside HTML)
+   IDs
+   Classes, attributes, Pseudo-classes
+   Elements, pseudo-elements */
+
+/* Universal Selector */
+* {
+    font-style: italic;
+    color: blue;
+}
+
+/* Type/Tag Selector */
+p {
+    background-color: yellow;
+    color: blueviolet;
+}
+
+h3 {
+    text-align: center;
+}
+
+/* ID Selector - Unique */
+#para {
+    text-align: center;
+}
+
+/* Class Selector */
+.redpara {
+    color: red;
+}

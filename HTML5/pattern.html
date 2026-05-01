@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validation</title>
+</head>
+<body>
+    <h2>User Form</h2>
+    <hr>
+    <br>
+    <form>
+        <!-- OM - Captial letters - ^[A-Z]{2,10}$
+        Gamana - Title case - ^ [A-Z]{1}[a-z]{1,50}$ -->
+        <label for="un"> Name : </label>
+        <input type="text" id="un" name="username" pattern="^[A-Z]{1}[a-z]{1,50}$" title="Enter only Alphabets"
+        placeholder="Gamana..." >
+        <br>
+        <br>
+        <label for="pn"> Phone Number : </label>
+        <input type="tel" id="un" name="pn" pattern="^\+91[6-9]{1}\d{2}-\d{3}-\d{4}$" title="Enter only Numbers"
+        placeholder="389-589-9809">
+        <br>
+        <br>
+        <!-- . {8, } 
+         ^[A-Za-z\d@$!%*?&#]{8,}
+         ^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$
+         Strong Password Validation(Minimum 12 Characters,Must Include Uppercase, Lowercase, Digits, Special Characters)
+         ^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{12,}$
+        Must contain at least 2 digits,Must contain at least 2 uppercase letters
+         Must contain 1 special character from !, #, %, or *, must contaain lowercase, 12, 60
+         -->
+        <label for="pwd">Password :</label>
+        <input type="text" id="pwd" name="Password" pattern="^(?=(.*\d){2,})(?=(.*[A-Z]){2,})(?=.*[!#%*])(?=(.*[a-z]))[A-Za-z\d!#%*]{12,60}$">
+        <br>
+        <br>
+        <label for="pwd">Email :</label>
+        <input type="email" id="pwd" name="email"
+         pattern="^[a-zA-Z0-9\._%+\-]+@[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,}$">
+        <br>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

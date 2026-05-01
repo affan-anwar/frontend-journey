@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model</title>
+    <style>
+        * {
+            margin: 0px;
+        }
+
+        .box1 {
+            width: 150px;
+            height: 100px;
+            background-color: aqua;
+            padding: 20px;
+
+            /* border-color: blue;
+            border-style: dashed;
+            border-width: 3px; */
+
+            /* Shorthand Property */
+            border: 5px solid red;
+
+            /* 1 value  margin: 20px;  top bottom left right */
+            /* 2 values 20px top bottom  40px left right */
+            /* 3 values - 20px top  40px left right  60px bottom */
+            /* 4 values - 20 t  40 r  60 b  100 l */
+            /* margin: 20px 40px 60px 100px; */
+
+            margin-left: 50px;
+            margin-top: 30px;
+            outline: 10px dashed violet;
+            position: relative;
+            z-index: 1;
+        }
+
+        .box2 {
+            width: 130px;
+            height: 130px;
+            background-color: #b2dfdb;
+            position: absolute;
+            top: 100px;
+            left: 145px;
+        }
+    </style>
+</head>
+<body style="position: relative;">
+    <div class="box1">Box Model</div>
+    <div class="box2"></div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Sizing in CSS</title>
+    <style>
+        h1 {
+            text-shadow: 10px 5px 5px aqua;
+        }
+
+        .nb {
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            padding: 10px;
+            border: 5px solid yellow;
+            margin: 10px;
+        }
+
+        .cb {
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            box-sizing: content-box;
+            padding: 10px;
+            border: 5px solid pink;
+            margin: 10px;
+        }
+
+        .bb {
+            width: 150px;
+            height: 150px;
+            background-color: aquamarine;
+            box-sizing: border-box;
+            padding: 10px;
+            border: 5px solid aqua;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Box Sizing</h1>
+    <div class="nb">Normal Box</div>
+    <div class="cb">Content Box</div>
+    <div class="bb">Border Box</div>
+</body>
+</html>

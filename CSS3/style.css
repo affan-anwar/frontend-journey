@@ -1,0 +1,12 @@
+ /* External CSS */
+ p {
+    color: red;
+    background-color: aqua;
+    text-align: center;
+}
+
+h1 {
+    color: blue;
+    text-decoration: underline;
+    text-align: center;
+}
