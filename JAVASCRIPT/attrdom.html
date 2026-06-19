@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attr DOM</title>
+</head>
+<body>
+    <a href="https://www.ipscampus.com">Click to visit IPSCampus</a>
+    <br>
+    <br>
+    <button onclick="setattr()">Set Attribute</button>
+    <button onclick="getattr()">Get Attribute</button>
+    <button onclick="removeattr()">Remove Attribute</button>
+
+    <script>
+        let link = document.querySelector("a");
+        function setattr() {
+            link.setAttribute("href", "https://www.google.com");
+            link.innerText = "Click to visit Google";
+        }
+           function getattr() {
+            let url = link.getAttribute("href");
+            alert("The url is" + url);
+        }
+
+        function removeattr() {
+            let url = link.removeAttribute("href");
+            alert("The url is removed");
+        }
+    </script>
+
+</body>
+</html>

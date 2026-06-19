@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Methods</title>
+</head>
+<body>
+
+  <h1 id="title">DOM Selection Methods</h1>
+
+  <p class="para">First paragraph</p>
+  <p class="para">Second paragraph</p>
+  <p class="para">Third paragraph</p>
+
+  <h2 class="box">Box One</h2>
+  <h2 class="box">Box Two</h2>
+
+  <input type="text" name="username" value="MD AFFAN ANWAR">
+  <input type="radio" name="gender" value="Male"> Male
+  <input type="radio" name="gender" value="Female"> Female
+
+  <br><br>
+
+  <button id="btn">Click Me</button>
+
+  <script>
+    // 1. getElementById()
+    let title = document.getElementById("title");
+    title.style.color = "blue";
+
+    // 2. querySelector()
+    let firstPara = document.querySelector(".para");
+    firstPara.style.color = "red";
+
+    // 3. querySelectorAll()
+    let allPara = document.querySelectorAll(".para");
+    allPara[1].style.color = "green";
+    allPara[2].style.backgroundColor = "yellow";
+
+    // 4. getElementsByClassName()
+    let boxes = document.getElementsByClassName("box");
+    boxes[0].style.color = "purple";
+    boxes[1].style.color = "orange";
+
+    // 5. getElementsByTagName()
+    let paragraphs = document.getElementsByTagName("p");
+    paragraphs[0].style.fontSize = "25px";
+
+    // 6. getElementsByName()
+    let user = document.getElementsByName("username");
+    console.log(user[0].value);
+
+    // Button click event
+    let btn = document.getElementById("btn");
+
+    btn.onclick = function() {
+      title.innerText = "DOM Changed After Button Click";
+
+      for (let i = 0; i < allPara.length; i++) {
+        allPara[i].style.color = "white";
+        allPara[i].style.backgroundColor = "black";
+      }
+    };
+  </script>
+
+</body>
+</html>

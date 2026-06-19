@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Returns a function as its output - closures -->
+
+    <script>
+      function outer() {
+        var a = 3;
+
+        return function inner() {
+          console.log(a);
+        };
+      }
+
+      let res = outer();
+      res();
+      res();
+
+      function createBankAccount(initialBalance) {
+  let balance = initialBalance;
+
+  return {
+    deposit: function (amount) {
+      balance += amount;
+      console.log(`Deposited: ${amount}, Balance: ${balance}`);
+    },
+
+    withdraw: function (amount) {
+      if (amount > balance) {
+        console.log("Insufficient funds!");
+      } else {
+        balance -= amount;
+        console.log(`Withdrew: ${amount}, Balance: ${balance}`);
+      }
+    }
+  };
+}
+
+const myAccount = createBankAccount(1000);
+
+myAccount.deposit(500);   // Deposited: 500, Balance: 1500
+myAccount.withdraw(300);  // Withdrew: 300, Balance: 1200
+    </script>
+  </body>
+</html>

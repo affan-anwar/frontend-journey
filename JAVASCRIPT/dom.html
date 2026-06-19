@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>DOM</title>
+</head>
+<body>
+     <h1>DOM methods</h1>
+    <p>getElementsbytagname</p>
+    <p id="paraid">getElementsbyId</p>
+    <p class ="bluetext">getElementsbyclassname</p>
+    <p>getElementsbyname</p>
+    <h4>Hello</h4>
+    <h4>Thank you</h4>
+    <h4 class="wb">Thank you</h4>
+  
+    <input type="text" id="name" placeholder="Enter your favorite hero" name="favhero">
+   <p id ="paravalue">Value displayed here</p>
+  <button onclick="change()">Click me to change</button>
+
+    <script>
+      let p =  document.querySelectorAll("h4");
+         p.forEach(p => {p.style.backgroundColor = "white";  p.style.color = "black";});
+        document.querySelector("h1").innerHTML = "<h3><i> DOM Methods in JavaScript </i></h3>";
+        //document.querySelector("h1").innerText = "DOM Methods in JavaScript";
+        document.querySelector("button").textContent = "click me";
+        document.getElementsByTagName("p")[0].style.color = "green";
+         document.getElementById("paraid").style.fontSize = "50px";
+
+         let bt = document.getElementsByClassName("bluetext");
+         for(let i=0; i<bt.length; i++) {
+            bt[i].style.color = "blue";
+            bt[i].style.backgroundColor = "green";
+         }
+        // document.getElementsByTagName("p")[3].style.color = "red";
+         function change() {
+            let x = document.getElementsByName("favhero")[0].value;
+            document.getElementById("paravalue").innerText = x;
+
+            let paras = document.getElementsByTagName("p");
+            for(let i=0; i<paras.length; i++) {
+                paras[i].style.color = "red";
+                paras[i].style.backgroundColor = "yellow";
+            }
+
+            document.querySelector(".wb").style.backgroundColor = "black";
+            document.querySelector(".wb").style.color = "white";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Practice</title>
+</head>
+<body>
+
+  <h1 id="heading">Hello DOM</h1>
+
+  <p class="para">First paragraph</p>
+  <p class="para">Second paragraph</p>
+  <p class="para">Third paragraph</p>
+
+  <button id="btn">Click Me</button>
+
+  <br><br>
+
+  <input type="text" id="name" placeholder="Enter name">
+  <button id="show">Show</button>
+
+  <h2 id="result"></h2>
+
+  <script>
+    let heading = document.getElementById("heading");
+    console.log(heading.innerText);
+
+    let firstPara = document.querySelector(".para");
+    firstPara.style.color = "red";
+
+    let allPara = document.querySelectorAll(".para");
+    console.log(allPara);
+
+    let pTag = document.getElementsByTagName("p");
+    pTag[1].style.color = "blue";
+
+    let btn = document.getElementById("btn");
+
+    btn.onclick = function() {
+      heading.innerText = "MD AFFAN ANWAR";
+      heading.style.color = "green";
+    };
+
+    let show = document.getElementById("show");
+
+    show.onclick = function() {
+      let name = document.getElementById("name").value;
+      document.getElementById("result").innerText = "Hello " + name;
+    };
+  </script>
+
+</body>
+</html>

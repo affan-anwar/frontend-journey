@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events</title>
+
+  <style>
+    body {
+      height: 100vh;
+    }
+    #myDiv {
+      width: 100px;
+      height: 100px;
+      background-color: aquamarine;
+    }
+
+    input {
+      width: 250px;
+      height: 25px;
+      font-size: 20px;
+      border: 2px solid black;
+    }
+
+    label {
+      font-size: 22px;
+    }
+
+    button {
+      font-size: 18px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Mouse events</h2>
+
+  <div id="myDiv"></div>
+
+  <br>
+
+  <!-- normal input box -->
+  <input type="text" id="myInput">
+
+  <br>
+
+  <form>
+    <label>Enter name:</label><br>
+    <input type="text" id="name">
+    <br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    // form select
+    let form = document.querySelector("form");
+
+    // name input select
+    let nameInput = document.getElementById("name");
+
+    // normal input select
+    let myInput = document.querySelector("#myInput");
+
+    // box select
+    let box = document.getElementById("myDiv");
+
+
+    // form submit event: form submit hone par run hota hai
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      if (nameInput.value.trim() === "") {
+        alert("Please enter your name");
+      } else {
+        alert("Form submitted successfully");
+      }
+    });
+
+
+    // focus event: jab input field select hota hai
+    myInput.addEventListener("focus", () => {
+      console.log("Input field focused!");
+    });
+
+
+    // blur event: jab input field se focus remove hota hai
+    myInput.addEventListener("blur", () => {
+      console.log("Input field lost focus!");
+    });
+
+
+    // change event: jab input value change karke field se bahar aate hain
+    myInput.addEventListener("change", (e) => {
+      console.log("Input field changed!");
+    });
+
+
+    // change event: changed value ko console me show karta hai
+    myInput.addEventListener("change", (e) => {
+      console.log(`Input changed to: ${e.target.value}`);
+    });
+
+
+    // input event: typing ke time real-time value show karta hai
+    myInput.addEventListener("input", (e) => {
+      console.log(`Input changed to: ${e.target.value}`);
+    });
+
+
+    // mousemove event: box ke andar mouse move hone par coordinates show karta hai
+    box.addEventListener("mousemove", (e) => {
+      box.style.backgroundColor = "aqua";
+      box.innerText = `X value: ${e.offsetX} and\nY value: ${e.offsetY}`;
+    });
+
+
+    // focus event for name input: name input select hone par run hota hai
+    nameInput.addEventListener("focus", () => {
+      console.log("Input field focused!");
+    });
+
+
+    // blur event for name input: name input se bahar click karne par run hota hai
+    nameInput.addEventListener("blur", () => {
+      console.log("Input field lost focus!");
+    });
+
+
+    // keydown event: key press hote hi run hota hai
+    nameInput.addEventListener("keydown", (event) => {
+      console.log("The key pressed is", event.key);
+    });
+
+
+    // keyup event: key release hone par run hota hai
+    nameInput.addEventListener("keyup", (event) => {
+      console.log("The key released is", event.key);
+    });
+
+
+    // keypress event: sirf alphabets allow karta hai
+    i.addEventListener("keypress", (event) => {
+      const pattern = /^[a-zA-Z]$/;
+
+      if (!pattern.test(event.key)) {
+        event.preventDefault();
+      }
+    });
+
+    // window Events
+    window.addEventListener("DOMContentLoadded", () => {
+      alert("Content Loaded Successfully");
+    });
+    window.addEventListener("resize", () => {
+      alert("window Resized");
+    });
+    window.addEventListener("scroll", () => {
+      console.log("window Scrolled", window.scrollY);
+    });
+  </script>
+</body>
+</html>
